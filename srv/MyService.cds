@@ -7,5 +7,15 @@ service MyService {
     entity SomeView  as SELECT * from db.student where Id=112;  // Returns complete record where the condition is satisfied.
 
     // entity InvoiceDetails as select from db.invoice;            // Returns all fields of invoice entity.      // Returns a single field.
+    entity readData {
+        Id:Integer;
+        name:String;
+    }
+    entity writedata {
+        Id:Integer;
+        name:String;
+    }
 
+action rejectIdoc(data : String) returns {Status : Integer};
 }
+
