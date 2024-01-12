@@ -1,4 +1,4 @@
-using data.db from '../db/schema';
+using chobani.db from '../db/schema';
 
 service MyService {
 
