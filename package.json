@@ -17,7 +17,7 @@
   },
   "cds": {
     "requires": {
-      "db": "hana-cloud",
+      "db": "hana",
       "[hybrid]": {
         "db": "hana"
       }

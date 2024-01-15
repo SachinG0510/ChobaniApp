@@ -2,6 +2,8 @@ using chobani.db from '../db/schema';
 
 service MyService {
 
+    entity users as projection on db.users;
+
     entity StudentDetails as projection on db.student {Id};     // Returns a particular field.
     entity details  as select from db.student;                  // Returns all fields of student entity.
     entity SomeView  as SELECT * from db.student where Id=112;  // Returns complete record where the condition is satisfied.
@@ -15,7 +17,18 @@ service MyService {
         Id:Integer;
         name:String;
     }
+    entity writedataUser{
+        name:String;
+        username:String;
+        password:String;
+    }
+    entity userDetails{
+        name:String;
+        username:String;
+        password:String;
+    }
 
-action rejectIdoc(data : String) returns {Status : Integer};
+    action rejectIdoc(data : String) returns {Status : Integer};
+    action userLogin(data : String) returns {respond : String};
 }
 
